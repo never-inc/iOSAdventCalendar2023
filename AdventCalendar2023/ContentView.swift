@@ -9,17 +9,24 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
 
+    @StateObject private var todoListController = TodoListController()
+    
+    private var items: [Todo] {
+        todoListController.items
+    }
+    
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(items, id: \.self) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        NavigationView {
+                            Text(item.text)
+                        }
+                        .navigationTitle(item.uuid)
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(item.text)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -41,15 +48,14 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
+            todoListController.addTodo(Todo.create(text: "new"))
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                modelContext.delete(items[index])
+                todoListController.deleteTodo(items[index])
             }
         }
     }
@@ -57,5 +63,4 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

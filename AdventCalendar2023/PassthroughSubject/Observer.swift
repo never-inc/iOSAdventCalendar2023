@@ -8,6 +8,6 @@
 import Combine
 
 final class Observer {
-    internal static let shared = Observer()
+    static let shared = Observer()
     let todoSubject = PassthroughSubject<Todo, Never>()
 }

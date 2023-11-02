@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  EnvironmentContentView.swift
 //  AdventCalendar2023
 //
 //  Created by 中川祥平 on 2023/11/01.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct EnvironmentContentView: View {
 
     @StateObject private var todoController = TodoController()
     
@@ -21,7 +21,7 @@ struct ContentView: View {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
-                        DetailView(todoId: item.todoId)
+                        EnvironmentDetailView(todoId: item.todoId)
                             .environmentObject(todoController)
                     } label: {
                         Text(item.text)
@@ -60,5 +60,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    EnvironmentContentView()
 }

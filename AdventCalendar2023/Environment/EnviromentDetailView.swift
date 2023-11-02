@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  EnvironmentDetailView.swift
 //  AdventCalendar2023
 //
 //  Created by 中川祥平 on 2023/11/02.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct EnvironmentDetailView: View {
     
     let todoId: String
     
@@ -40,6 +40,6 @@ struct DetailView: View {
     let todo = Todo(todoId: UUID().uuidString, text: "text")
     let todoController = TodoController()
     todoController.addTodo(todo)
-    return DetailView(todoId: todo.todoId)
+    return EnvironmentDetailView(todoId: todo.todoId)
         .environmentObject(todoController)
 }

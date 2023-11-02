@@ -16,7 +16,7 @@ struct NotificationCenterContentView: View {
     }
     
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
@@ -45,8 +45,6 @@ struct NotificationCenterContentView: View {
                     }
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 

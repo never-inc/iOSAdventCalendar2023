@@ -15,7 +15,7 @@ struct PassthroughSubjectContentView: View {
     }
     
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
@@ -41,8 +41,6 @@ struct PassthroughSubjectContentView: View {
                     }
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 

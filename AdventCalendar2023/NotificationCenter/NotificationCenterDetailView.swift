@@ -12,18 +12,16 @@ struct NotificationCenterDetailView: View {
     @State private(set) var item: Todo
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text(item.text)
-                Button(action: {
-                    let newTodo = item.copyWith(text: "\(Int.random(in: 1000...10000))")
-                    item = newTodo
-                    NotificationCenter.default.post(name: .updateTodo, object: newTodo)
-                }) {
-                    Text("Update")
-                }
-                .padding()
+        VStack {
+            Text(item.text)
+            Button(action: {
+                let newTodo = item.copyWith(text: "\(Int.random(in: 1000...10000))")
+                item = newTodo
+                NotificationCenter.default.post(name: .updateTodo, object: newTodo)
+            }) {
+                Text("Update")
             }
+            .padding()
         }
     }
 }

@@ -18,22 +18,20 @@ struct EnvironmentDetailView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text(item?.text ?? "")
-                Button(action: {
-                    guard let item = self.item else {
-                        return
-                    }
-                    let newTodo = item.copyWith(text: "\(Int.random(in: 1000...10000))")
-                    todoController.updateTodo(newTodo)
-                }) {
-                    Text("Update")
+        VStack {
+            Text(item?.text ?? "")
+            Button(action: {
+                guard let item = self.item else {
+                    return
                 }
-                .padding()
+                let newTodo = item.copyWith(text: "\(Int.random(in: 1000...10000))")
+                todoController.updateTodo(newTodo)
+            }) {
+                Text("Update")
             }
+            .padding()
         }
-    }    
+    }
 }
 
 #Preview {

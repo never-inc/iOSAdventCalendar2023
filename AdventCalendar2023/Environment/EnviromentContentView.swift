@@ -17,7 +17,7 @@ struct EnvironmentContentView: View {
     }
     
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
@@ -40,8 +40,6 @@ struct EnvironmentContentView: View {
                     }
                 }
             }
-        } detail: {
-            Text("Select an item")
         }
     }
 

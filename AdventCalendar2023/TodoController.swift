@@ -14,7 +14,7 @@ final class TodoController: ObservableObject {
     private let todoDataSource = TodoDataSource.shared
     
     init() {
-        self.items = todoDataSource.items
+        items = todoDataSource.items
     }
     
     func addTodo(_ todo: Todo) {

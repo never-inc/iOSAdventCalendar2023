@@ -18,6 +18,9 @@
 		19C0AB812AF31561000277B1 /* TodoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB802AF31561000277B1 /* TodoController.swift */; };
 		19C0AB832AF31A4E000277B1 /* EnviromentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB822AF31A4E000277B1 /* EnviromentDetailView.swift */; };
 		19C0AB862AF3255E000277B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB852AF3255E000277B1 /* ContentView.swift */; };
+		19C0AB892AF32959000277B1 /* NotificationCenterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB882AF32959000277B1 /* NotificationCenterContentView.swift */; };
+		19C0AB8D2AF329DA000277B1 /* NotificationCenterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB8C2AF329DA000277B1 /* NotificationCenterDetailView.swift */; };
+		19C0AB8F2AF32B23000277B1 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB8E2AF32B23000277B1 /* NotificationName+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		19C0AB802AF31561000277B1 /* TodoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoController.swift; sourceTree = "<group>"; };
 		19C0AB822AF31A4E000277B1 /* EnviromentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnviromentDetailView.swift; sourceTree = "<group>"; };
 		19C0AB852AF3255E000277B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		19C0AB882AF32959000277B1 /* NotificationCenterContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterContentView.swift; sourceTree = "<group>"; };
+		19C0AB8C2AF329DA000277B1 /* NotificationCenterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterDetailView.swift; sourceTree = "<group>"; };
+		19C0AB8E2AF32B23000277B1 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 				19C0AB852AF3255E000277B1 /* ContentView.swift */,
 				19744BEB2AF2792B0072ADF7 /* Todo.swift */,
 				19C0AB802AF31561000277B1 /* TodoController.swift */,
+				19C0AB872AF32949000277B1 /* NotificationCenter */,
 				19C0AB842AF31F3F000277B1 /* Environment */,
 				19744BED2AF2792C0072ADF7 /* Assets.xcassets */,
 				19744BEF2AF2792C0072ADF7 /* AdventCalendar2023.entitlements */,
@@ -147,6 +154,16 @@
 				19C0AB822AF31A4E000277B1 /* EnviromentDetailView.swift */,
 			);
 			path = Environment;
+			sourceTree = "<group>";
+		};
+		19C0AB872AF32949000277B1 /* NotificationCenter */ = {
+			isa = PBXGroup;
+			children = (
+				19C0AB882AF32959000277B1 /* NotificationCenterContentView.swift */,
+				19C0AB8C2AF329DA000277B1 /* NotificationCenterDetailView.swift */,
+				19C0AB8E2AF32B23000277B1 /* NotificationName+Extension.swift */,
+			);
+			path = NotificationCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,7 +298,10 @@
 			files = (
 				19744BEA2AF2792B0072ADF7 /* EnviromentContentView.swift in Sources */,
 				19C0AB812AF31561000277B1 /* TodoController.swift in Sources */,
+				19C0AB892AF32959000277B1 /* NotificationCenterContentView.swift in Sources */,
 				19C0AB862AF3255E000277B1 /* ContentView.swift in Sources */,
+				19C0AB8D2AF329DA000277B1 /* NotificationCenterDetailView.swift in Sources */,
+				19C0AB8F2AF32B23000277B1 /* NotificationName+Extension.swift in Sources */,
 				19744BEC2AF2792B0072ADF7 /* Todo.swift in Sources */,
 				19C0AB832AF31A4E000277B1 /* EnviromentDetailView.swift in Sources */,
 				19744BE82AF2792B0072ADF7 /* AdventCalendar2023App.swift in Sources */,

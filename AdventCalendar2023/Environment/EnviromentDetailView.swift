@@ -25,7 +25,7 @@ struct EnvironmentDetailView: View {
                     guard let item = self.item else {
                         return
                     }
-                    let newTodo = item.copyWith(text: "\(Int.random(in: 1...100))")
+                    let newTodo = item.copyWith(text: "\(Int.random(in: 1000...10000))")
                     todoController.updateTodo(newTodo)
                 }) {
                     Text("Update Button")

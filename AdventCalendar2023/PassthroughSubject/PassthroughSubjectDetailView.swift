@@ -11,7 +11,7 @@ struct PassthroughSubjectDetailView: View {
     
     let todoId: String
     @State private(set) var item: Todo?
-    private let todoDataSource = TodoDataSource.shared
+    private let dataSource = DataSource.shared
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct PassthroughSubjectDetailView: View {
                 }
                 let newTodo = item.copyWith(text: Todo.randomText())
                 self.item = newTodo
-                todoDataSource.updateTodo(newTodo)
+                dataSource.updateTodo(newTodo)
                 Observer.shared.todoSubject.send(newTodo)
             }) {
                 Text("Update")
@@ -31,7 +31,7 @@ struct PassthroughSubjectDetailView: View {
         }
         .onAppear {
             // データソースから取得
-            item = todoDataSource.fetchTodo(todoId)
+            item = dataSource.fetchTodo(todoId)
         }
     }
 }

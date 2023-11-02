@@ -11,15 +11,15 @@ final class TodoController: ObservableObject {
     
     @Published private(set) var items: [Todo]
     
-    private let todoDataSource = TodoDataSource.shared
+    private let dataSource = DataSource.shared
     
     init() {
-        items = todoDataSource.items
+        items = dataSource.items
     }
     
     func addTodo(_ todo: Todo) {
         items = [todo] + items
-        todoDataSource.addTodo(todo)
+        dataSource.addTodo(todo)
     }
     
     func fetchTodo(_ todoId: String) -> Todo? {
@@ -27,18 +27,18 @@ final class TodoController: ObservableObject {
             return todo
         }
         // もしitemsに存在しなければ、データソースから取得する
-        let todo = todoDataSource.fetchTodo(todoId)
+        let todo = dataSource.fetchTodo(todoId)
         // TODO: ユースケースよってはitemsにもセットする（しないケースもあるけど）
         return todo
     }
     
     func updateTodo(_ todo: Todo) {
         items = items.map { $0.todoId == todo.todoId ? todo : $0 }
-        todoDataSource.updateTodo(todo)
+        dataSource.updateTodo(todo)
     }
     
     func deleteTodo(_ todoId: String) {
         items = items.filter { $0.todoId != todoId }
-        todoDataSource.deleteTodo(todoId)
+        dataSource.deleteTodo(todoId)
     }
 }

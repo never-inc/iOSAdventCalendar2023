@@ -58,7 +58,7 @@ struct ContentView: View {
             .toolbar {
                 ToolbarItem {
                     Button(action: {
-                        TodoDataSource.shared.clear()
+                        DataSource.shared.clear()
                     }) {
                         Text("Clear DataSource")
                     }

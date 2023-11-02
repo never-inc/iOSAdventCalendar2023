@@ -7,9 +7,9 @@
 
 import Foundation
 
-// ダミーデータ: 実際はローカルDBやAPIになる
-final class TodoDataSource {
-    static var shared = TodoDataSource()
+// ローカルDBやAPIの代わりとなるダミーデータ
+final class DataSource {
+    static let shared = DataSource()
     private(set) var items = (0...19).map { index in Todo(todoId: UUID().uuidString, text: "\(index)") }
     
     func addTodo(_ todo: Todo) {

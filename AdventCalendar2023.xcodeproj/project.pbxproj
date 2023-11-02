@@ -21,6 +21,9 @@
 		19C0AB892AF32959000277B1 /* NotificationCenterContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB882AF32959000277B1 /* NotificationCenterContentView.swift */; };
 		19C0AB8D2AF329DA000277B1 /* NotificationCenterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB8C2AF329DA000277B1 /* NotificationCenterDetailView.swift */; };
 		19C0AB8F2AF32B23000277B1 /* NotificationName+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB8E2AF32B23000277B1 /* NotificationName+Extension.swift */; };
+		19C0AB922AF32E35000277B1 /* PassthroughSubjectContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB912AF32E35000277B1 /* PassthroughSubjectContentView.swift */; };
+		19C0AB942AF32E3E000277B1 /* PassthroughSubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB932AF32E3E000277B1 /* PassthroughSubjectDetailView.swift */; };
+		19C0AB962AF32E61000277B1 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB952AF32E61000277B1 /* Observer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +62,9 @@
 		19C0AB882AF32959000277B1 /* NotificationCenterContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterContentView.swift; sourceTree = "<group>"; };
 		19C0AB8C2AF329DA000277B1 /* NotificationCenterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterDetailView.swift; sourceTree = "<group>"; };
 		19C0AB8E2AF32B23000277B1 /* NotificationName+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+Extension.swift"; sourceTree = "<group>"; };
+		19C0AB912AF32E35000277B1 /* PassthroughSubjectContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughSubjectContentView.swift; sourceTree = "<group>"; };
+		19C0AB932AF32E3E000277B1 /* PassthroughSubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassthroughSubjectDetailView.swift; sourceTree = "<group>"; };
+		19C0AB952AF32E61000277B1 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 				19C0AB852AF3255E000277B1 /* ContentView.swift */,
 				19744BEB2AF2792B0072ADF7 /* Todo.swift */,
 				19C0AB802AF31561000277B1 /* TodoController.swift */,
+				19C0AB902AF32E1C000277B1 /* PassthroughSubject */,
 				19C0AB872AF32949000277B1 /* NotificationCenter */,
 				19C0AB842AF31F3F000277B1 /* Environment */,
 				19744BED2AF2792C0072ADF7 /* Assets.xcassets */,
@@ -164,6 +171,16 @@
 				19C0AB8E2AF32B23000277B1 /* NotificationName+Extension.swift */,
 			);
 			path = NotificationCenter;
+			sourceTree = "<group>";
+		};
+		19C0AB902AF32E1C000277B1 /* PassthroughSubject */ = {
+			isa = PBXGroup;
+			children = (
+				19C0AB912AF32E35000277B1 /* PassthroughSubjectContentView.swift */,
+				19C0AB932AF32E3E000277B1 /* PassthroughSubjectDetailView.swift */,
+				19C0AB952AF32E61000277B1 /* Observer.swift */,
+			);
+			path = PassthroughSubject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,11 +314,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				19744BEA2AF2792B0072ADF7 /* EnviromentContentView.swift in Sources */,
+				19C0AB962AF32E61000277B1 /* Observer.swift in Sources */,
 				19C0AB812AF31561000277B1 /* TodoController.swift in Sources */,
 				19C0AB892AF32959000277B1 /* NotificationCenterContentView.swift in Sources */,
 				19C0AB862AF3255E000277B1 /* ContentView.swift in Sources */,
+				19C0AB942AF32E3E000277B1 /* PassthroughSubjectDetailView.swift in Sources */,
 				19C0AB8D2AF329DA000277B1 /* NotificationCenterDetailView.swift in Sources */,
 				19C0AB8F2AF32B23000277B1 /* NotificationName+Extension.swift in Sources */,
+				19C0AB922AF32E35000277B1 /* PassthroughSubjectContentView.swift in Sources */,
 				19744BEC2AF2792B0072ADF7 /* Todo.swift in Sources */,
 				19C0AB832AF31A4E000277B1 /* EnviromentDetailView.swift in Sources */,
 				19744BE82AF2792B0072ADF7 /* AdventCalendar2023App.swift in Sources */,

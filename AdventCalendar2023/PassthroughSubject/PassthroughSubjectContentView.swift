@@ -1,15 +1,13 @@
 //
-//  EnvironmentContentView.swift
+//  PassthroughSubjectContentView.swift
 //  AdventCalendar2023
 //
-//  Created by 中川祥平 on 2023/11/01.
+//  Created by 中川祥平 on 2023/11/02.
 //
 
 import SwiftUI
-import SwiftData
 
-struct EnvironmentContentView: View {
-
+struct PassthroughSubjectContentView: View {
     @StateObject private var todoController = TodoController()
     
     private var items: [Todo] {
@@ -21,15 +19,18 @@ struct EnvironmentContentView: View {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
-                        EnvironmentDetailView(todoId: item.todoId)
-                            .environmentObject(todoController)
+                        PassthroughSubjectDetailView(item: item)
                     } label: {
                         Text(item.text)
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
-            .navigationTitle("Sample With Environment")
+            // CombineのPassthroughSubject
+            .onReceive(Observer.shared.todoSubject) { todo in
+                todoController.updateTodo(todo)
+            }
+            .navigationTitle("Sample With PassthroughSubject")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -61,5 +62,5 @@ struct EnvironmentContentView: View {
 }
 
 #Preview {
-    EnvironmentContentView()
+    PassthroughSubjectContentView()
 }

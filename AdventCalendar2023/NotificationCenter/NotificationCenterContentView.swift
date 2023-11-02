@@ -28,12 +28,13 @@ struct NotificationCenterContentView: View {
                 .onDelete(perform: deleteItems)
             }
             // NotificationCenter + Combine
-            .onReceive(NotificationCenter.default.publisher(for: .updateTodo), perform: { value in
+            .onReceive(NotificationCenter.default.publisher(for: .updateTodo)) { value in
                 guard let todo = value.object as? Todo else {
                     return
                 }
                 todoController.updateTodo(todo)
-            })
+            }
+            .navigationTitle("Sample With NotificationCenter")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()

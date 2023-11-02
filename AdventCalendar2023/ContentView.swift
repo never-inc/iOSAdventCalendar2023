@@ -12,13 +12,17 @@ struct ContentView: View {
     private enum ViewType: View, Hashable, Identifiable {
         case environment
         case notificationCenter
+        case passthroughSubject
         var id: String {
             switch self {
             case .environment:
                 return "Sample With Environment"
             case .notificationCenter:
                 return "Sample With NotificationCenter"
+            case .passthroughSubject:
+                return "Sample With PassthroughSubject"
             }
+            
         }
         var body: some View {
             switch self {
@@ -26,6 +30,8 @@ struct ContentView: View {
                 return AnyView(EnvironmentContentView())
             case .notificationCenter:
                 return AnyView(NotificationCenterContentView())
+            case .passthroughSubject:
+                return AnyView(PassthroughSubjectContentView())
             }
         }
     }
@@ -33,7 +39,8 @@ struct ContentView: View {
     @State private var presentation: ViewType?
     @State private var items: [ViewType] = [
         .environment,
-        .notificationCenter
+        .notificationCenter,
+        .passthroughSubject
     ]
     
     var body: some View {

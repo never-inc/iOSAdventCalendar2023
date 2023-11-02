@@ -10,12 +10,8 @@ import SwiftUI
 struct EnvironmentDetailView: View {
     
     let todoId: String
-    
+    @State private(set) var item: Todo?
     @EnvironmentObject private var todoController: TodoController
-    
-    private var item: Todo? {
-      todoController.items.first(where: { $0.todoId == todoId })
-    }
     
     var body: some View {
         VStack {
@@ -24,12 +20,16 @@ struct EnvironmentDetailView: View {
                 guard let item = self.item else {
                     return
                 }
-                let newTodo = item.copyWith(text: "\(Int.random(in: 1000...10000))")
+                let newTodo = item.copyWith(text: Todo.randomText())
+                self.item = newTodo
                 todoController.updateTodo(newTodo)
             }) {
                 Text("Update")
             }
             .padding()
+        }
+        .onAppear {
+            item = todoController.fetchTodo(todoId)
         }
     }
 }

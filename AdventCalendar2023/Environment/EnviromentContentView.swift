@@ -30,6 +30,7 @@ struct EnvironmentContentView: View {
                 .onDelete(perform: deleteItems)
             }
             .navigationTitle("Sample With Environment")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -52,7 +53,7 @@ struct EnvironmentContentView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                todoController.deleteTodo(items[index])
+                todoController.deleteTodo(items[index].todoId)
             }
         }
     }

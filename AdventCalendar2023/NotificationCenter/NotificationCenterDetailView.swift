@@ -9,24 +9,34 @@ import SwiftUI
 
 struct NotificationCenterDetailView: View {
     
-    @State private(set) var item: Todo
+    let todoId: String
+    @State private(set) var item: Todo?
+    private let todoDataSource = TodoDataSource.shared
     
     var body: some View {
         VStack {
-            Text(item.text)
+            Text(item?.text ?? "")
             Button(action: {
-                let newTodo = item.copyWith(text: "\(Int.random(in: 1000...10000))")
-                item = newTodo
+                guard let item = self.item else {
+                    return
+                }
+                let newTodo = item.copyWith(text: Todo.randomText())
+                self.item = newTodo
+                todoDataSource.updateTodo(newTodo)
                 NotificationCenter.default.post(name: .updateTodo, object: newTodo)
             }) {
                 Text("Update")
             }
             .padding()
         }
+        .onAppear {
+            // データソースから取得
+            item = todoDataSource.fetchTodo(todoId)
+        }
     }
 }
 
 #Preview {
     let todo = Todo(todoId: UUID().uuidString, text: "text")
-    return NotificationCenterDetailView(item: todo)
+    return NotificationCenterDetailView(todoId: todo.todoId)
 }

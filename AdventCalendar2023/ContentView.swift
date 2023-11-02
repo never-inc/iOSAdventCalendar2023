@@ -44,16 +44,27 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        List {
-            ForEach(items, id: \.self) { item in
-                Button {
-                    presentation = item
-                } label: {
-                    Text("\(item.id)")
+        NavigationStack {
+            List {
+                ForEach(items, id: \.self) { item in
+                    Button {
+                        presentation = item
+                    } label: {
+                        Text("\(item.id)")
+                    }
+                }
+            }
+            .sheet(item: $presentation) { $0.body }
+            .toolbar {
+                ToolbarItem {
+                    Button(action: {
+                        TodoDataSource.shared.clear()
+                    }) {
+                        Text("Clear DataSource")
+                    }
                 }
             }
         }
-        .sheet(item: $presentation) { $0.body }
     }
 }
 

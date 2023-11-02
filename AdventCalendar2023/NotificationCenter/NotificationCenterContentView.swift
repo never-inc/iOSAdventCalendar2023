@@ -20,7 +20,7 @@ struct NotificationCenterContentView: View {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
-                        NotificationCenterDetailView(item: item)
+                        NotificationCenterDetailView(todoId: item.todoId)
                     } label: {
                         Text(item.text)
                     }
@@ -35,6 +35,7 @@ struct NotificationCenterContentView: View {
                 todoController.updateTodo(todo)
             }
             .navigationTitle("Sample With NotificationCenter")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -57,7 +58,7 @@ struct NotificationCenterContentView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                todoController.deleteTodo(items[index])
+                todoController.deleteTodo(items[index].todoId)
             }
         }
     }

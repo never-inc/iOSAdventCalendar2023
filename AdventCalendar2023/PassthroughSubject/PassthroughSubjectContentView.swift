@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PassthroughSubjectContentView: View {
+    
     @StateObject private var todoController = TodoController()
     
     private var items: [Todo] {
@@ -19,7 +20,7 @@ struct PassthroughSubjectContentView: View {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
-                        PassthroughSubjectDetailView(item: item)
+                        PassthroughSubjectDetailView(todoId: item.todoId)
                     } label: {
                         Text(item.text)
                     }
@@ -31,6 +32,7 @@ struct PassthroughSubjectContentView: View {
                 todoController.updateTodo(todo)
             }
             .navigationTitle("Sample With PassthroughSubject")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
@@ -53,7 +55,7 @@ struct PassthroughSubjectContentView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                todoController.deleteTodo(items[index])
+                todoController.deleteTodo(items[index].todoId)
             }
         }
     }

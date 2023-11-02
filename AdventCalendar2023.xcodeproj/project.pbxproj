@@ -15,7 +15,8 @@
 		19744BFC2AF2792C0072ADF7 /* AdventCalendar2023Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19744BFB2AF2792C0072ADF7 /* AdventCalendar2023Tests.swift */; };
 		19744C062AF2792C0072ADF7 /* AdventCalendar2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19744C052AF2792C0072ADF7 /* AdventCalendar2023UITests.swift */; };
 		19744C082AF2792C0072ADF7 /* AdventCalendar2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19744C072AF2792C0072ADF7 /* AdventCalendar2023UITestsLaunchTests.swift */; };
-		19C0AB812AF31561000277B1 /* TodoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB802AF31561000277B1 /* TodoListController.swift */; };
+		19C0AB812AF31561000277B1 /* TodoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB802AF31561000277B1 /* TodoController.swift */; };
+		19C0AB832AF31A4E000277B1 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C0AB822AF31A4E000277B1 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +49,8 @@
 		19744C012AF2792C0072ADF7 /* AdventCalendar2023UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventCalendar2023UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19744C052AF2792C0072ADF7 /* AdventCalendar2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventCalendar2023UITests.swift; sourceTree = "<group>"; };
 		19744C072AF2792C0072ADF7 /* AdventCalendar2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdventCalendar2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		19C0AB802AF31561000277B1 /* TodoListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListController.swift; sourceTree = "<group>"; };
+		19C0AB802AF31561000277B1 /* TodoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoController.swift; sourceTree = "<group>"; };
+		19C0AB822AF31A4E000277B1 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				19744BE72AF2792B0072ADF7 /* AdventCalendar2023App.swift */,
-				19744BE92AF2792B0072ADF7 /* ContentView.swift */,
 				19744BEB2AF2792B0072ADF7 /* Todo.swift */,
-				19C0AB802AF31561000277B1 /* TodoListController.swift */,
+				19C0AB802AF31561000277B1 /* TodoController.swift */,
+				19C0AB842AF31F3F000277B1 /* Ex1 */,
 				19744BED2AF2792C0072ADF7 /* Assets.xcassets */,
 				19744BEF2AF2792C0072ADF7 /* AdventCalendar2023.entitlements */,
 				19744BF02AF2792C0072ADF7 /* Preview Content */,
@@ -133,6 +135,15 @@
 				19744C072AF2792C0072ADF7 /* AdventCalendar2023UITestsLaunchTests.swift */,
 			);
 			path = AdventCalendar2023UITests;
+			sourceTree = "<group>";
+		};
+		19C0AB842AF31F3F000277B1 /* Ex1 */ = {
+			isa = PBXGroup;
+			children = (
+				19744BE92AF2792B0072ADF7 /* ContentView.swift */,
+				19C0AB822AF31A4E000277B1 /* DetailView.swift */,
+			);
+			path = Ex1;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19744BEA2AF2792B0072ADF7 /* ContentView.swift in Sources */,
-				19C0AB812AF31561000277B1 /* TodoListController.swift in Sources */,
+				19C0AB812AF31561000277B1 /* TodoController.swift in Sources */,
 				19744BEC2AF2792B0072ADF7 /* Todo.swift in Sources */,
+				19C0AB832AF31A4E000277B1 /* DetailView.swift in Sources */,
 				19744BE82AF2792B0072ADF7 /* AdventCalendar2023App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

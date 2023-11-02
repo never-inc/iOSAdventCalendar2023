@@ -10,10 +10,10 @@ import SwiftData
 
 struct ContentView: View {
 
-    @StateObject private var todoListController = TodoListController()
+    @StateObject private var todoController = TodoController()
     
     private var items: [Todo] {
-        todoListController.items
+        todoController.items
     }
     
     var body: some View {
@@ -21,10 +21,8 @@ struct ContentView: View {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
-                        NavigationView {
-                            Text(item.text)
-                        }
-                        .navigationTitle(item.uuid)
+                        DetailView(uuid: item.uuid)
+                            .environmentObject(todoController)
                     } label: {
                         Text(item.text)
                     }
@@ -48,14 +46,14 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            todoListController.addTodo(Todo.create(text: "new"))
+            todoController.addTodo(Todo(uuid: UUID().uuidString, text: "new"))
         }
     }
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             for index in offsets {
-                todoListController.deleteTodo(items[index])
+                todoController.deleteTodo(items[index])
             }
         }
     }

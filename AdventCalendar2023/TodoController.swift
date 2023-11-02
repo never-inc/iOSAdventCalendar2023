@@ -1,5 +1,5 @@
 //
-//  TodoListController.swift
+//  TodoController.swift
 //  AdventCalendar2023
 //
 //  Created by 中川祥平 on 2023/11/02.
@@ -7,7 +7,8 @@
 
 import Foundation
 
-final class TodoListController: ObservableObject {
+final class TodoController: ObservableObject {
+    
     @Published private(set) var items: [Todo]
     
     init() {

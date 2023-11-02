@@ -11,7 +11,7 @@ struct Todo: Hashable {
     let uuid: String
     let text: String
     
-    static func create(text: String) -> Todo{
-        Todo(uuid: UUID().uuidString, text: text)
+    func copyWith(text: String) -> Todo {
+        Todo(uuid: self.uuid, text: text)
     }
 }

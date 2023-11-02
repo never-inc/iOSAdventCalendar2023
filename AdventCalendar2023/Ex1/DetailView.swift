@@ -9,12 +9,12 @@ import SwiftUI
 
 struct DetailView: View {
     
-    let uuid: String
+    let todoId: String
     
     @EnvironmentObject private var todoController: TodoController
     
     private var item: Todo? {
-      todoController.items.first(where: { $0.uuid == uuid })
+      todoController.items.first(where: { $0.todoId == todoId })
     }
     
     var body: some View {
@@ -37,9 +37,9 @@ struct DetailView: View {
 }
 
 #Preview {
-    let todo = Todo(uuid: UUID().uuidString, text: "text")
+    let todo = Todo(todoId: UUID().uuidString, text: "text")
     let todoController = TodoController()
     todoController.addTodo(todo)
-    return DetailView(uuid: todo.uuid)
+    return DetailView(todoId: todo.todoId)
         .environmentObject(todoController)
 }

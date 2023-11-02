@@ -12,7 +12,7 @@ final class TodoController: ObservableObject {
     @Published private(set) var items: [Todo]
     
     init() {
-        self.items = (0...19).map { index in Todo(uuid: UUID().uuidString, text: "\(index)") }
+        self.items = (0...19).map { index in Todo(todoId: UUID().uuidString, text: "\(index)") }
     }
     
     func addTodo(_ todo: Todo) {
@@ -20,10 +20,10 @@ final class TodoController: ObservableObject {
     }
     
     func updateTodo(_ todo: Todo) {
-        items = items.map { $0.uuid == todo.uuid ? todo : $0 }
+        items = items.map { $0.todoId == todo.todoId ? todo : $0 }
     }
     
     func deleteTodo(_ todo: Todo) {
-        items = items.filter { $0.uuid != todo.uuid }
+        items = items.filter { $0.todoId != todo.todoId }
     }
 }

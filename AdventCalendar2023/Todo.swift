@@ -8,10 +8,10 @@
 import Foundation
 
 struct Todo: Hashable {
-    let uuid: String
+    let todoId: String
     let text: String
     
     func copyWith(text: String) -> Todo {
-        Todo(uuid: self.uuid, text: text)
+        Todo(todoId: todoId, text: text)
     }
 }

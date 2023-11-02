@@ -21,7 +21,7 @@ struct ContentView: View {
             List {
                 ForEach(items, id: \.self) { item in
                     NavigationLink {
-                        DetailView(uuid: item.uuid)
+                        DetailView(todoId: item.todoId)
                             .environmentObject(todoController)
                     } label: {
                         Text(item.text)
@@ -46,7 +46,7 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            todoController.addTodo(Todo(uuid: UUID().uuidString, text: "new"))
+            todoController.addTodo(Todo(todoId: UUID().uuidString, text: "new"))
         }
     }
 

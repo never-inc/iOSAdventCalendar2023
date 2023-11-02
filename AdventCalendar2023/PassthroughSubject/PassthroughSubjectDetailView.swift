@@ -20,7 +20,7 @@ struct PassthroughSubjectDetailView: View {
                     item = newTodo
                     Observer.shared.todoSubject.send(newTodo)
                 }) {
-                    Text("Update Button")
+                    Text("Update")
                 }
                 .padding()
             }

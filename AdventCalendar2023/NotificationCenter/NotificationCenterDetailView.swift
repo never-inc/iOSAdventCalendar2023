@@ -20,7 +20,7 @@ struct NotificationCenterDetailView: View {
                     item = newTodo
                     NotificationCenter.default.post(name: .updateTodo, object: newTodo)
                 }) {
-                    Text("Update Button")
+                    Text("Update")
                 }
                 .padding()
             }

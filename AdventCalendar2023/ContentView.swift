@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private enum ViewType: View, Hashable, Identifiable {
+    private enum Presentation: View, Hashable, Identifiable {
         case environment
         case notificationCenter
         case passthroughSubject
@@ -36,8 +36,8 @@ struct ContentView: View {
         }
     }
     
-    @State private var presentation: ViewType?
-    @State private var items: [ViewType] = [
+    @State private var presentation: Presentation?
+    @State private var items: [Presentation] = [
         .environment,
         .notificationCenter,
         .passthroughSubject

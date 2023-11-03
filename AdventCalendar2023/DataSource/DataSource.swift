@@ -7,7 +7,7 @@
 
 import Foundation
 
-// ローカルDBやAPIの代わりとなるダミーデータ
+// APIやローカルDBの代わりとなるもの
 final class DataSource {
     static let shared = DataSource()
     private(set) var items: [[String: Any]] = (0...19).map { index in ["todoId": UUID().uuidString, "text": "\(index)"] }

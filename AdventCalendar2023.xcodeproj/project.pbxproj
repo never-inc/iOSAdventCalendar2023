@@ -94,6 +94,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		191276232AF490CE00397CE2 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				19C0AB992AF34009000277B1 /* DataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		191276242AF490DC00397CE2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				19744BEB2AF2792B0072ADF7 /* Todo.swift */,
+				19C0AB802AF31561000277B1 /* TodoController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		19744BDB2AF2792B0072ADF7 = {
 			isa = PBXGroup;
 			children = (
@@ -119,9 +136,8 @@
 			children = (
 				19744BE72AF2792B0072ADF7 /* AdventCalendar2023App.swift */,
 				19C0AB852AF3255E000277B1 /* ContentView.swift */,
-				19744BEB2AF2792B0072ADF7 /* Todo.swift */,
-				19C0AB802AF31561000277B1 /* TodoController.swift */,
-				19C0AB992AF34009000277B1 /* DataSource.swift */,
+				191276232AF490CE00397CE2 /* DataSource */,
+				191276242AF490DC00397CE2 /* Model */,
 				19C0AB842AF31F3F000277B1 /* Environment */,
 				19C0AB872AF32949000277B1 /* NotificationCenter */,
 				19C0AB902AF32E1C000277B1 /* PassthroughSubject */,

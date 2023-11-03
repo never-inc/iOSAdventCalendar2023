@@ -22,7 +22,7 @@ struct PassthroughSubjectDetailView: View {
                 }
                 let newTodo = item.copyWith(text: Todo.randomText())
                 self.item = newTodo
-                dataSource.updateTodo(newTodo)
+                dataSource.updateTodo(newTodo.toDic())
                 Observer.shared.todoSubject.send(newTodo)
             }) {
                 Text("Update")
@@ -31,7 +31,9 @@ struct PassthroughSubjectDetailView: View {
         }
         .onAppear {
             // データソースから取得
-            item = dataSource.fetchTodo(todoId)
+            if let dic = dataSource.fetchTodo(todoId), let todo = Todo.fromDic(dic) {
+                item = todo
+            }
         }
     }
 }

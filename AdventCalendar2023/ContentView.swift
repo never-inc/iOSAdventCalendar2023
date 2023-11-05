@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    private enum Presentation: View, Hashable, Identifiable {
+    private enum Presentation: View, Identifiable {
         case environment
         case notificationCenter
         case passthroughSubject
@@ -22,7 +22,6 @@ struct ContentView: View {
             case .passthroughSubject:
                 return "Sample With PassthroughSubject"
             }
-            
         }
         var body: some View {
             switch self {
@@ -46,7 +45,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(items, id: \.self) { item in
+                ForEach(items, id: \.id) { item in
                     Button {
                         presentation = item
                     } label: {
